@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--char set (lang above)-->
+  <meta charset="utf-8">
+
+  <!--device/browser shizzle-->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!--meta content-->
+  <link rel="shortcut icon" href="favicon.ico" />
+
+  <meta name="author" content="Ruth John (@rumyra)">
+  <meta name="dcterms.rightsHolder" content="Ruth John for Rumyra Ltd, United Kingdom, 2015">
+  <title>Web Audio Keynote</title>
+
+  <link rel="stylesheet" href="reveal/css/reveal.css">
+  <link rel="stylesheet" href="reveal/css/theme/rumyra.css" id="theme">
+  <link rel="stylesheet" href="reveal/lib/css/eighties.css">
+  <!-- <link rel="stylesheet" href="assets/audio.css"> -->
+  <script src="reveal/js/reveal.js"></script>
+
+
+  <style type="text/css">
+    .reveal h3 a {color:#8c4c6f;}
+    .reveal h3 a:hover {color:#acc486;}
+    .reveal h3 a:visited {color:#8c4c6f;}
+  </style>
+
+</head>
+
+<!--
+
+$green: #acc486
+$orange: #ea8d88
+$purple: #8c4c6f
+
+$brown: #463c34
+$cream: #eee5c4
+
+$grey: #bebebe
+-->
+
+<body class="talk">
+  <div class="reveal">
+    <div class="slides">
+      <section>
+
+        <section data-background-color="#8c4c6f">
+          <h1>Web Audio Conf 2018</h1>
+          <p>Ruth John&nbsp;&nbsp;|&nbsp;&nbsp;@Rumyra</p>
+          <aside class="notes">
+            <p>Hey everyone. Web Audio Conf! What a stage. Bet you're wondering who I am:</p>
+          </aside>
+        </section>
+
+        <section data-background-color="#8c4c6f">
+          <h1>Ruth John&nbsp;&nbsp;|&nbsp;&nbsp;@Rumyra</h1>
+          <p>Hello</p>
+          <aside class="notes">
+            <p>My name is Ruth</p>
+            <p>You may know me from such places as...</p>
+          </aside>
+        </section>
+
+        <!-- TODO ADD PLACES -->
+        <section data-background-color="#8c4c6f" data-background-image="media/slack.png">
+          <h1>Ruth John&nbsp;&nbsp;|&nbsp;&nbsp;@Rumyra</h1>
+          <p>Hello</p>
+          <aside class="notes">
+            <p>When I asked about IIR Filters in web audio slack</p>
+          </aside>
+        </section>
+
+        <section data-background-color="#8c4c6f" data-background-image="media/keyring.jpg">
+          <h1>Ruth John&nbsp;&nbsp;|&nbsp;&nbsp;@Rumyra</h1>
+          <p>Hello</p>
+          <aside class="notes">
+            <p>Or that time I laser cut a bazillion web audio keyrings and took a photo</p>
+            <p>Yes I have some with me - and yes I will get back to this...</p>
+          </aside>
+        </section>
+
+        <section data-background-color="#8c4c6f" data-background-image="media/keyring.jpg">
+          <h1>Ruth John&nbsp;&nbsp;|&nbsp;&nbsp;@Rumyra</h1>
+          <p>Hello</p>
+          <aside class="notes">
+            <p>Maybe that time</p>
+          </aside>
+        </section>
+
+        <section data-background-color="#8c4c6f">
+          <h1>Ruth John&nbsp;&nbsp;|&nbsp;&nbsp;@Rumyra</h1>
+          <p>Hello</p>
+          <aside class="notes">
+            <p>Because of these wonderful credentials that I have, Jack and Jan asked me to talk here last year. And I thought yeh sure - that gives me a whole year to think of something great to talk about.</p>
+            <p>And it got to July and I was having coffee with Chris Wilson and he'll tell you, I had no idea</p>
+            <p>I thought 'hey it's web audio conf' maybe I should talk about the web audio API - let's see what other people are talking about</p>
+          </aside>
+        </section>
+
+        <section data-background-color="#8c4c6f" data-background-image="media/chrisRogers.jpg">
+          <h1>Chris Rogers</h1>
+          <p>Wrote original spec</p>
+          <aside class="notes">
+            <p>Um</p>
+          </aside>
+        </section>
+
+        <section data-background-color="#8c4c6f" data-background-image="media/paulAdenot.jpg">
+          <h1>Paul Adonot</h1>
+          <p>Writing current spec</p>
+          <aside class="notes">
+            <p>Huh</p>
+            <p>OK well, um I can talk about what I do, which is mostly draw shapes to sound</p>
+          </aside>
+        </section>
+
+        <section data-background-color="#8c4c6f" data-background-image="media/vizTalks.jpg">
+          <h1>Visualisations?</h1>
+          <aside class="notes">
+            <p>Alright ok, there's only one thing for it.</p>
+          </aside>
+        </section>
+
+        <section data-background-color="#8c4c6f">
+          <h1>Well...</h1>
+          <h2>Thanks for having me! 👋🏻</h2>
+          <aside class="notes">
+            <p>Well thanks for having me - my work here is done.</p>
+          </aside>
+        </section>
+
+        <!-- IS WEB AUDIO CONF 5 YEARS OLD? -->
+        <section data-background-color="#ea8d88" data-background-image="media/1718.jpg">
+          <h1>Web Audio API</h1>
+          <h2>What a year!</h2>
+          <aside class="notes">
+            <p>I am going to say one thing about web audio api. What a year!</p>
+          </aside>
+        </section>
+
+        <section data-background-color="#ea8d88">
+          <h1>Audio Worklets</h1>
+          <aside class="notes">
+            <p>I remember talking to my good friend Matt McKegg after last years conf - I wasn't here - and it was all audio worklets and everyone was super excited</p>
+            <p>How long were we waiting?</p>
+          </aside>
+        </section>
+
+        <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+        <!-- TODO GET SCREENSHOT & NAME -->
+        <section data-background-color="#ea8d88">
+          <h1>Web Assembly</h1>
+          <aside class="notes">
+            <p>That matched with web assembly has bought us incredible things such as this synth...and all the things we're hearing about all the time, hear too.</p>
+          </aside>
+        </section>
+
+        <!-- <section data-background-color="#ea8d88">
+          <h1>Web Workers</h1>
+          <aside class="notes">
+          </aside>
+        </section> -->
+
+        <section data-background-color="#ea8d88">
+          <h1>The Policy™</h1>
+          <aside class="notes">
+            <p>I got to attend Google IO this year</p>
+            <p>In my April, see, I was busy I got a laser cutter.</p>
+          </aside>
+        </section>
+
+        <section data-background-color="#ea8d88">
+          <h1>Laser Cutter</h1>
+          <aside class="notes">
+            <p>A laser cutter! I could cut things with a laser. So when I got to IO</p>
+          </aside>
+        </section>
+
+        <!-- TODO PUT FIRE HERE -->
+        <section data-background-color="#ea8d88">
+          <h1>Fire Here</h1>
+          <aside class="notes">
+            <p>Fire</p>
+          </aside>
+        </section>
+
+        <section data-background-color="#ea8d88">
+          <h1>The Policy™</h1>
+          <aside class="notes">
+            <p>I was so aware this was happening. I am a big believer sound has a place on the internet and the falacy of bkground sound is one that is in the past and will stay there.</p>
+            <p>But I only complained about this to myself, internally. It was very interesting watching the fall out.</p>
+          </aside>
+        </section>
+
+        <section data-background-color="#ea8d88">
+          <h1>IIR!</h1>
+          <aside class="notes">
+            <p>I've been knee - shoulder deep in the spec for the past few weeks as I've been helping mozilla update the mdn docs.</p>
+            <p>Paul will take us through it all tomorrow, but it's so great to see things progressing</p>
+          </aside>
+        </section>
+
+        <section data-background-color="#ea8d88" data-background-image="media/lemStop.gif">
+          <h1>Tech moves on</h1>
+          <aside class="notes">
+            <p>I've been thinking about this a lot recently</p>
+            <p>One thing that's made me think about it more, possibly due to my age, I dunno...</p>
+            <p>Is because I miss physical formats</p>
+          </aside>
+        </section>
+
+        <section data-background-color="#ea8d88">
+          <h1>Picture of physical formats</h1>
+          <aside class="notes">
+            <p>One thing that's made me think of it more is how much I miss physical formats. Now I'm sure there's a great deal of people in this room still big into their physical formats for audio. However I gave this up a while ago. And it was only recently did I start thinking about it again.</p>
+          </aside>
+        </section>
+
+        <section data-background-color="#ea8d88">
+          <h1>LPs</h1>
+          <aside class="notes">
+            <p>I'm of the age where how I consume audio has change dramatically. My first experience of listening to music was my parents LPs. Routing through this huge battered cardboard boxes. Repeat playing The Beatles, ABBA, DISCO. There's something insatiable about being a child isn't there, where you can just repeat something over, and over, and over. Play a record, watch a movie, actually complete Donkey Kong.</p>
+            <p>I was talking to my mum about this and she said, what was your favourite LP - and I said DISCO and she said - we didn't have that, we were cool</p>
+            <p>Apparently definitions of cool change with time as well</p>
+          </aside>
+        </section>
+
+        <section data-background-color="#ea8d88">
+          <h1>Tapes</h1>
+          <aside class="notes">
+            <p>I remember begging my mother my own stereo when I was about 11. I had discovered tape casettes. If I'm honest, this is my ultimate format. There are reasons why all formats are good, but this one is my format.</p>
+          </aside>
+        </section>
+
+        <section data-background-color="#ea8d88">
+          <h1>Pencil, ruler, tape</h1>
+          <aside class="notes">
+            <p>I mean is there any other way of listening to audio that whne it breaks you can fix it with items in your pencil case. And yes - I have sticky tape with me. Right now!</p>
+          </aside>
+        </section>
+
+        <section data-background-color="#ea8d88">
+          <h1>Why cassettes</h1>
+          <aside class="notes">
+            <p>But those cases, when you opened them and took out the cassette and slid it into the carridge and closed it. All of that mechanical motion is so satisfying. Buttons - pressing buttons is great. Play, pause - up and down. Stop, eject when it clicks back out again. Getting old cassettes and putting tape over the corners so you could record whatever songs you wanted off the radio. I was 12 and I was curating mix tapes.</p>
+          </aside>
+        </section>
+
+        <section data-background-color="#ea8d88">
+          <h1>Minidisk</h1>
+          <aside class="notes">
+            <p>Then CDs and minidisks came along. Now I'm sure if I'd had the funds I would have got into mini disks - they were more compact. Luckily I could only afford one, and that was for when I studied Music Technology at college and the track I composed and recorded in a studio was mixed down to it. I still have it and am I glad I have nothing to play it on! No one needs to hear that.</p>
+          </aside>
+        </section>
+
+        <!-- laser disk clip -->
+        <section data-background-color="#ea8d88">
+          <h1>Minidisk</h1>
+          <aside class="notes">
+            <p>Everyone was excited by laser disks</p>
+            <p>I never took to CDs. I experienced them for the most part as computer data and well, they scratch and broke and got corrupted. They took up room. I was still playing tapes.</p>
+            <p>By this time I could drive and I mean I never had a car with anything apart from a tape player. Cars with CD players were - well posh, and it wasn't long before mp3 players came out and as we well know, if you wanted to play mp3s in your car - you could do that just as well with a tape player.</p>
+          </aside>
+        </section>
+
+        <section data-background-color="#ea8d88">
+          <h1>MP3 player</h1>
+          <aside class="notes">
+            <p>And it was downhill from there really. My first mp3 player was something mb. It held about 8 tracks iirc.</p>
+          </aside>
+        </section>
+
+        <section data-background-color="#ea8d88">
+          <h1>Napster/Winamp</h1>
+          <aside class="notes">
+            <p>And I hit uni and we all hit napster. But we were still sharing music with each other. Making winamp playlists. Even those of us with shiny ipods.</p>
+          </aside>
+        </section>
+
+        <section data-background-color="#ea8d88">
+          <h1>What then?</h1>
+          <aside class="notes">
+            <p>And then there was a huge gap, I felt I lost my way. I had my mp3 collection and that was that. All that happened when streaming came around was I collated all the mp3s in my already collection that was sitting around random dusty hard drives.</p>
+          </aside>
+        </section>
+
+        <section data-background-color="#ea8d88">
+          <h1>Sharing</h1>
+          <aside class="notes">
+            <p>The thing about a physical format is you can give it to someone. Streaming open up a whole new world for us and yet no one gave me music.</p>
+            <p>I have spoke about this with a number of friends recently and one of them looked so sad and just said. Yes it used to be my favourite thing to give to a girl I fancied. I would just make them a mix CD. I mean I was like CD? Give me a tape bucko. But I got his point.</p>
+          </aside>
+        </section>
+
+        <section data-background-color="#ea8d88">
+          <h1>Muxtape</h1>
+          <aside class="notes">
+            <p>And people have tried this. There have been a few apps trying to emulate the old mix tape by curating a streamable playlist which you can share with a significant other. However they've never caught on. We're just too ok with everything on demand.</p>
+          </aside>
+        </section>
+
+        <section data-background-color="#ea8d88">
+          <h1>Phone</h1>
+          <aside class="notes">
+            <p>(PHONE) this, this is our player now. This our stereo, this is our bombox. I mean god forbid the next time I take a train journey and someone is blasting out trap on this, I am actually going to carry on my boombox and pop in a tape cassette and even with its dodgy speakers strut down the ilse and find the (person who is doing it) and do an english glare, maybe even a shake.</p>
+          </aside>
+        </section>
+
+        <section data-background-color="#ea8d88">
+          <h1>Phone</h1>
+          <aside class="notes">
+            <p>This phone tho. It's an interesting thing that allows us to play music. And not just to stream. It's been a creative concept for quite sometime but harking back to these past 12 months some other interesting things happened. Three people I know who also build things with code all in very quick succession made javascript based apps that played things. This isn't a new concept and is proving to be very common, especially in the realm of generative art which is increasing in popularity.</p>
+          </aside>
+        </section>
+
+        <section data-background-color="#ea8d88">
+          <h1>Jake Alburgh</h1>
+          <aside class="notes">
+            <p></p>
+          </aside>
+        </section>
+
+        <section data-background-color="#ea8d88">
+          <h1>Ben Foxall</h1>
+          <aside class="notes">
+            <p></p>
+          </aside>
+        </section>
+
+        <section data-background-color="#ea8d88">
+          <h1>Remy Sharp</h1>
+          <aside class="notes">
+            <p></p>
+          </aside>
+        </section>
+
+        <section data-background-color="#ea8d88">
+          <h1>So</h1>
+          <aside class="notes">
+            <p>So all of this got me thinking - did I mention I got a laser cutter.</p>
+            <p>Could I cut an audio format - I've got a player</p>
+          </aside>
+        </section>
+
+        <section data-background-color="#ea8d88">
+          <h1>The Laser Cutter</h1>
+          <aside class="notes">
+            <p>It's awesome. It's a 'desktop' laser cutter. It fills my studio. You hook it up to your wifi, draw an svg in the software and it will cut it, or engrave it. It's super the most fun ever. I have a lot of toys and this is surely my favourite at the moment. (Wait until I get a MIDI fighter and ask me again).</p>
+          </aside>
+        </section>
+
+        <section data-background-color="#ea8d88">
+          <h1>Wood LP</h1>
+          <aside class="notes">
+            <p>Someone did this</p>
+          </aside>
+        </section>
+
+        <section data-background-color="#ea8d88">
+          <h1>The Laser Cutter</h1>
+          <aside class="notes">
+            <p>So I began experimenting. I wasn't too sure what I was trying to start with. There's a couple of stems I can go down. The first is cutting something that plays. The laser cutter can engrave. You can engrave at different levels, so you get different 'tones' on a material. Light or dark. They could represent different notes. Possibly different tracks.</p>
+          </aside>
+        </section>
+
+        <section data-background-color="#ea8d88">
+          <h1>Instruments</h1>
+          <aside class="notes">
+            <p>I cut two instruments, a drum machine and a synth.</p>
+            <p>Mow all I had to do was make them play</p>
+            <p>I piped the image to canvas, picked up the image data, created a scrubber which moved along the image and when it hit a key or pad, made a noise</p>
+            <p>Massive props to Ben for his help</p>
+          </aside>
+        </section>
+
+        <section data-background-color="#ea8d88">
+          <h1>Drum machine v1</h1>
+          <aside class="notes">
+            <p>demo</p>
+          </aside>
+        </section>
+
+        <section data-background-color="#ea8d88">
+          <h1>Drum machine v2</h1>
+          <aside class="notes">
+            <p>demo</p>
+            <p>Once it's cut you can't change it</p>
+          </aside>
+        </section>
+
+        <section data-background-color="#ea8d88">
+          <h1>Synth</h1>
+          <aside class="notes">
+            <p>demo</p>
+          </aside>
+        </section>
+
+        <section data-background-color="#ea8d88">
+          <h1>But wait</h1>
+          <aside class="notes">
+            <p>I mean this is awesome. We can pretty much make an instrument out of anything using this technique. We could just draw a drum machine.</p>
+          </aside>
+        </section>
+
+        <section data-background-color="#ea8d88">
+          <h1>Ben's link about interactive school</h1>
+          <aside class="notes">
+            <p></p>
+          </aside>
+        </section>
+
+        <section data-background-color="#ea8d88">
+          <h1>It's not a format</h1>
+          <aside class="notes">
+            <p>It's not a format, it's an instrument. I was looking to create an audio format. Something I could physically give to someone that they could play.</p>
+          </aside>
+        </section>
+
+        <section data-background-color="#ea8d88">
+          <h1>It's not a format</h1>
+          <aside class="notes">
+            <p>It's not a format, it's an instrument. I was looking to create an audio format. Something I could physically give to someone that they could play.</p>
+          </aside>
+        </section>
+
+
+
+
+
+
+
+
+        <section data-background-color="#ea8d88">
+          <h1>My lifetime</h1>
+          <aside class="notes">
+            <p>It is true I wasn't around for all formats.</p>
+            <p>Wax cylinders</p>
+          </aside>
+        </section>
+
+
+<!-- THIS IS IMPORTANT "0x" + x.toString(16); -->
+      </section>
+    </div></div>
+
+    <div id="screen"></div>
+
+<script src="reveal/plugin/notes/notes.js"></script>
+<script src="reveal/plugin/highlight/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+<script src="scripts/init.js"></script>
+
+<script type="text/javascript">
+// Reveal~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+</script>
+
+
+</body>
+</html>
