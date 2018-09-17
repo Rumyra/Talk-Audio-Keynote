@@ -4,7 +4,7 @@ This is the Web Audio Keynote by [Ruth John](https:/twitter.com/Rumyra)
 
 Versions of this talk have been seen at:
 
-- [Web Audio Conf 2018]()
+- [Web Audio Conf 2018](https://webaudioconf.com/)
 
 ## About
 
@@ -25,8 +25,8 @@ You can find all the slides within the talk in the [index file]() within this bu
 
 ## Examples referenced within the talk
 
-- []()
-- []()
+- [Worklet Editor](https://dsp.audio/editor/)
+- [Europa by Propellerheads](https://www.propellerheads.se/europa)
 - []()
 - []()
 

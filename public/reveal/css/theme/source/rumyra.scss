@@ -51,10 +51,17 @@ $black:#111;
   src: url('../../../fonts/Sacramento/Sacramento-Regular.ttf') format('truetype');
 }
 
+@font-face {
+  font-family: 'Pac';
+  font-weight: normal;
+  font-style: normal;
+  src: url('../../../fonts/Pacifico/Pacifico-Regular.ttf') format('truetype');
+}
+
 
 $backgroundColor: $white;
 // Primary/body text
-$mainFont: 'Sac', cursive;
+$mainFont: 'Pac', cursive;
 $mainFontSize: 36px;
 $mainColor: $white;
 
