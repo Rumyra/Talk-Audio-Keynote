@@ -10,7 +10,7 @@ Versions of this talk have been seen at:
 
 Keynote for Web Audio Conf 2018.
 
-I miss physical audio formats, so I spoke about them. My own experience of formats throughout my life and a couple of experiments that came form my thoughts. I think this is really the start of a bigger project. But it's a nice opener for Web Audio Conf to relax everyone and give them something to think about.
+I miss physical audio formats, so I spoke about them. My own experience of formats throughout my life and a couple of experiments that came from my thoughts. I think this is really the start of a bigger project. But it's a nice opener for Web Audio Conf to relax everyone and give them something to think & talk about.
 
 <!-- ## Videos
 
